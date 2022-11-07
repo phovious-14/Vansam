@@ -15,7 +15,7 @@ As we are aware about security of Web3 it is stored in a encrypted and will be a
 
 ## Screenshots
 
-![App Screenshot](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667848243/Screenshot_18_mrdj89.png)
+![App Screenshot](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667848406/Screenshot_20_ywuc1i.png)
 
 ![App Screenshot](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667848244/Screenshot_21_q9qf3y.png)
 
