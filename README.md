@@ -1,70 +1,35 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Logo](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667843948/logo2_b86fo0.png)
 
-In the project directory, you can run:
+# Vansam
 
-### `npm start`
+We have often heard about places like Varanasi which have (Ghats) which have people who keep records of your past generations and forefathers but that data being recorded on books have danger of being stolen ,burnt or destroyed and it's not feasible for all to go to varanasi and record themselves as the newer generations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Now how we solved this is by creating a webapp that records your data and stores it under your wallet address on Polygon netowrk(we also tried Shardeum) .
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Today we have so many text based ways to store our family ancestor details. 
+But, they can be tampered easily so to utilise Web3 power of Immutability we created this app.
+As we are aware about security of Web3 it is stored in a encrypted and will be available to you till END of the WORLD.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+![App Screenshot](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667848243/Screenshot_18_mrdj89.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![App Screenshot](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667848244/Screenshot_21_q9qf3y.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![App Screenshot](https://res.cloudinary.com/dm6aa7jlg/image/upload/v1667848243/Screenshot_19_tbwnhi.png)
+## Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Polygon 
+* Shardium
+* React
+* HardHat
 
-### `npm run eject`
+## Challenges We Ran Into
+* We have tried to deploy our dapp on Shardeum but we were getting JSON RPC error which we have also coordinated with the Shardeum team.
+* We had also tested the same smart contract on Remix with Shardeum Network and it was working fine on EVM with Remix but it was not behaving properly when we tried to use it with our frontend code.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Scope
+We have also planned to create a Updatable NFT which holds the Whole Family Tree.
