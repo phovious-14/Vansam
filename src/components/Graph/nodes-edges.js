@@ -6,20 +6,10 @@ export const initialNodes = [
     id: '1',
     data: { label: (
       <>
-        fatherName : _fatherName, <br />
-        maleName : Babulal,
-        femaleName : _femaleName,
-        dob : _dob,
-        recordDate: block.timestamp,
-        totalWealth : _wealth,
-        genNo : gen
+        Babulal
       </>
     ), },
     position,
-    style:{
-      minHeight: 100,
-      width: 400
-    }
   },
   {
     id: '2',
@@ -44,7 +34,7 @@ export const initialNodes = [
   {
     id: '6',
     data: { label: 'jagruti ben' },
-    position,
+    position
   }
 ];
 
