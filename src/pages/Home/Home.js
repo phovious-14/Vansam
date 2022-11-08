@@ -11,7 +11,7 @@ const Home = () => {
     <div className='home-container'>
       <Navbar />
       <div className='home-quote'>
-        <span><p>VANSAM</p><br /> The Family Tree App That Lets You Create Your Own NFT</span>
+        <span><p>VANSAM</p><br /> The Family Tree App That Lets You Preserve Your Family Data</span>
         <img className='bgimg' src={bgimg} alt="" />
       </div>
       <div className='home-quote2'>

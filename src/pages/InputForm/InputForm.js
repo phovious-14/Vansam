@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./inputStyle.css";
 import Auth from "../../context/Auth";
+import {Link} from "react-router-dom"
 
 const InputForm = () => {
 
@@ -9,14 +10,14 @@ const InputForm = () => {
   const [mname, setMname] = useState("");
   const [fename, setFename] = useState("");
   const [dob, setDob] = useState("");
-  const [recordDate, setRecordDate] = useState("");
   const [wealth, setWealth] = useState("");
   const [genNo, setGenNo] = useState("");
 
   const addData = async (e) => {
     e.preventDefault();
-    // const data = await contract.createPerson(mname, fename, genNo, dob, wealth, fname);
-    // await data.wait()
+    const data = await contract.createPerson(mname, fename, genNo, dob, wealth, fname);
+    await data.wait()
+    alert("Data added to blockchain successfully")
 
     console.log(await contract.getData());
   };
@@ -71,16 +72,6 @@ const InputForm = () => {
           </div>
           <div className="form-group">
             <input
-              type="date"
-              className="form-control"
-              placeholder="Record Date"
-              id="record_date"
-              onChange={(e)=> setRecordDate(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
               type="number"
               className="form-control"
               placeholder="Total Wealth"
@@ -104,6 +95,7 @@ const InputForm = () => {
           <button type="button" onClick={addData} className="signup-btn">
             Submit Details
           </button>
+          <button className="signup-btn"><Link to="/">Go To Home</Link></button>
         </div>
       </div>
     </div>

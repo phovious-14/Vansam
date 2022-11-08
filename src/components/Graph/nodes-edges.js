@@ -6,44 +6,41 @@ export const initialNodes = [
     id: '1',
     data: { label: (
       <>
-        Babulal
+        Male name - babulal <br />
+        DOB - 1-1-1950 <br />
+        Wife - Lilaben <br />
+        Generation - 1 <br />
       </>
     ), },
     position,
   },
   {
     id: '2',
-    data: { label: 'Lila ben' },
-    position
+    data: { label: (
+      <>
+        Male name - Prakash bhai <br />
+        DOB - 10-9-1972 <br />
+        Wife - Rita ben <br />
+        Generation - 2 <br />
+      </>
+    ), },
+    position,
   },
   {
     id: '3',
-    data: { label: 'Prakas bhai' },
+    data: { label: (
+      <>
+        Male name - Atul bhai <br />
+        DOB - 10-4-1977 <br />
+        Wife - Jagruti ben <br />
+        Generation - 2 <br />
+      </>
+    ), },
     position,
-  },
-  {
-    id: '4',
-    data: { label: 'Rita ben' },
-    position,
-  },
-  {
-    id: '5',
-    data: { label: 'Atul bhai' },
-    position,
-  },
-  {
-    id: '6',
-    data: { label: 'jagruti ben' },
-    position
   }
 ];
 
 export const initialEdges = [
-  { id: 'e12', source: '1', label:"wife", target: '2' },
-  { id: 'e34', source: '3', label:"wife", target: '4' },
-  { id: 'e13', source: '1', target: '3', animated: true },
-  { id: 'e23', source: '2', target: '3', animated: true },
-  { id: 'e15', source: '1', target: '5', animated: true },
-  { id: 'e25', source: '2', target: '5', animated: true },
-  { id: 'e56', source: '5', label:"wife", target: '6' },
+  { id: 'e12', source: '1', label:"son", target: '2' },
+  { id: 'e13', source: '1', label:"son", target: '3'},
 ];

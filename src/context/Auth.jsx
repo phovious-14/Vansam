@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }) => {
     const contractABI = contractJSON.abi;
     const {ethereum} = window;
     const contractAddress = "0xf9d7dE0eC6E2fe5d24811066c20b5568EdEFB7c5";
+    // const contractAddress = "0x1650B0B24Fb921C86a7D97dcd737042E2f380201";
     var contract;
 
     if (ethereum) {
@@ -52,28 +53,8 @@ export const AuthProvider = ({ children }) => {
     // await tx1.wait();
     // console.log("Data = ", await AddDate.getData());
 
-    const position = { x: 0, y: 0 };
-    var initialNodes = []
-    var initialEdges = []
-
-    const data = async () => {
-      const famData = await contract.getData()
-      console.log(famData);
-      for(var i = 0; i < famData.length; i++) {
-          
-        initialNodes.push({
-          id: `${i}`,
-          data: { label: (
-            <>
-              {famData[i][0]}   
-            </>
-          ), },
-          position,
-        })
-      }
-
-      return {initialNodes, initialEdges}
-    }
+    
+    // console.log(localStorage.setItem("initialNodes", initialNode))
 	
 	return (
 		<Auth.Provider
@@ -82,7 +63,6 @@ export const AuthProvider = ({ children }) => {
 				isWalletInstalled, setIsWalletInstalled,
 				connectWallet,
                 contract,
-                data
 			}}
 		>
 		{children}

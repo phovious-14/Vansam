@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import ReactFlow, {
   addEdge,
   ConnectionLineType,
@@ -12,7 +12,8 @@ import "reactflow/dist/style.css";
 import './style.css'
 import Auth from "../../context/Auth";
 
-import { initialNodes, initialEdges } from "./nodes-edges";
+// import { initialNodes, initialEdges } from "./nodes-edges";
+import { Link } from "react-router-dom";
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
@@ -53,72 +54,27 @@ const getLayoutedElements = (nodes, edges, direction = "TB") => {
 };
 
 
-const Graph = () => {
-
-    // const {contract} = useContext(Auth)
-    // const position = { x: 0, y: 0 };
-    // var initialNodes = []
-    // var initialEdges = []
-
-    // const data = async () => {
-    //   const famData = await contract.getData()
-    //   console.log(famData);
-    //   for(var i = 0; i < famData.length; i++) {
-          
-    //     initialNodes.push({
-    //       id: `${i}`,
-    //       data: { label: (
-    //         <>
-    //           {famData[i][0]}   
-    //         </>
-    //       ), },
-    //       position,
-    //     })
-    //   }
-    // }
-
-    // data()
-
-      // initialNodes = [
-      //   {
-      //     id: '1',
-      //     data: { label: (
-      //       <>
-      //         babulal
-      //       </>
-      //     ), },
-      //     position,
-      //   }
-      // ]
+const Graph = ({initialNodes, initialEdges}) => {
 
       const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
         initialNodes,
         initialEdges
       );
 
-    const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
-    const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
-  
-    const onConnect = useCallback(
-      (params) =>
-        setEdges((eds) =>
-          addEdge(
-            { ...params, type: ConnectionLineType.SmoothStep, animated: true },
-            eds
-          )
-        ),
-      []
-    );
-    const onLayout = useCallback(
-      (direction) => {
-        const { nodes: layoutedNodes, edges: layoutedEdges } =
-          getLayoutedElements(nodes, edges, direction);
-  
-        setNodes([...layoutedNodes]);
-        setEdges([...layoutedEdges]);
-      },
-      [nodes, edges]
-    );
+      const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
+      const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
+
+      const onLayout = useCallback(
+        (direction) => {
+          const { nodes: layoutedNodes, edges: layoutedEdges } =
+            getLayoutedElements(nodes, edges, direction);
+    
+          setNodes([...layoutedNodes]);
+          setEdges([...layoutedEdges]);
+        },
+        [nodes, edges]
+      );
+
   return (
     <div className="layoutflow">
       <ReactFlow
@@ -126,7 +82,15 @@ const Graph = () => {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
+        onConnect={useCallback(
+          (params) =>
+            setEdges((eds) =>
+              addEdge(
+                { ...params, type: ConnectionLineType.SmoothStep, animated: true },
+                eds
+              )
+            ), []
+        )}
         connectionLineType={ConnectionLineType.SmoothStep}
         fitView
       >
@@ -135,8 +99,9 @@ const Graph = () => {
       </ReactFlow>
 
       <div className="controls">
-        <button onClick={() => onLayout("TB")}>vertical layout</button>
-        <button onClick={() => onLayout("LR")}>horizontal layout</button>
+        <button className="btn-style"><Link to="/add-person">Add Generation</Link></button>
+        <button className="btn-style" onClick={() => onLayout("TB")}>vertical layout</button>
+        <button className="btn-style" onClick={() => onLayout("LR")}>horizontal layout</button>
       </div>
     </div>
   )
