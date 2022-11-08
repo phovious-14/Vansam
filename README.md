@@ -27,6 +27,7 @@ As we are aware about security of Web3 it is stored in a encrypted and will be a
 * Shardium
 * React
 * HardHat
+* Solidity
 
 ## Challenges We Ran Into
 * We have tried to deploy our dapp on Shardeum but we were getting JSON RPC error which we have also coordinated with the Shardeum team.
