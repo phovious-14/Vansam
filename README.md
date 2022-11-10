@@ -7,7 +7,7 @@
 
 We have often heard about places like Varanasi which have (Ghats) which have people who keep records of your past generations and forefathers but that data being recorded on books have danger of being stolen ,burnt or destroyed and it's not feasible for all to go to varanasi and record themselves as the newer generations.
 
-Now how we solved this is by creating a webapp that records your data and stores it under your wallet address on Polygon netowrk(we also tried Shardeum) .
+Now how we solved this is by creating a webapp that records your data and stores it under your wallet address on Polygon netowrk and Shardeum .
 
 Today we have so many text based ways to store our family ancestor details. 
 But, they can be tampered easily so to utilise Web3 power of Immutability we created this app.
@@ -32,6 +32,7 @@ As we are aware about security of Web3 it is stored in a encrypted and will be a
 ## Challenges We Ran Into
 * We have tried to deploy our dapp on Shardeum but we were getting JSON RPC error which we have also coordinated with the Shardeum team.
 * We had also tested the same smart contract on Remix with Shardeum Network and it was working fine on EVM with Remix but it was not behaving properly when we tried to use it with our frontend code.
+* But finally we deployed our Smart contract on both Shardeum and Polygon(testnet) Network
 
 ## Future Scope
 We have also planned to create a Updatable NFT which holds the Whole Family Tree.
