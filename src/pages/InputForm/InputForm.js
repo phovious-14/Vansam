@@ -12,10 +12,12 @@ const InputForm = () => {
   const [dob, setDob] = useState("");
   const [wealth, setWealth] = useState("");
   const [genNo, setGenNo] = useState("");
+  const [rootId, setRootId] = useState("");
 
   const addData = async (e) => {
     e.preventDefault();
-    const data = await contract.createPerson(mname, fename, genNo, dob, wealth, fname);
+    const malename = `${mname}-${rootId}`
+    const data = await contract.createPerson(malename, fename, genNo, dob, wealth, fname);
     await data.wait()
     alert("Data added to blockchain successfully")
 
@@ -27,7 +29,17 @@ const InputForm = () => {
       <div className="row">
         <div className="signin-form">
           <div className="logo-container"></div>
-          <div className="form-group ">
+          <div className="form-group "><div className="form-group">
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Root-ID (if there is no root id then enter 0)"
+              id="rootId"
+              onChange={(e)=> setRootId(e.target.value)}
+              required
+            />
+            <i className="fa fa-lock"></i>
+          </div>
             <input
               type="text"
               className="form-control"

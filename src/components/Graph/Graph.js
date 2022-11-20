@@ -10,7 +10,6 @@ import ReactFlow, {
 import dagre from "dagre";
 import "reactflow/dist/style.css";
 import './style.css'
-import Auth from "../../context/Auth";
 
 // import { initialNodes, initialEdges } from "./nodes-edges";
 import { Link } from "react-router-dom";
@@ -18,8 +17,8 @@ import { Link } from "react-router-dom";
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 172;
-const nodeHeight = 100;
+const nodeWidth = 200;
+const nodeHeight = 170;
 
 const getLayoutedElements = (nodes, edges, direction = "TB") => {
   const isHorizontal = direction === "LR";
